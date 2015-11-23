@@ -84,7 +84,7 @@ end
 
 link '/etc/init.d/sickrage' do
   to ::File.join(node[:sickrage][:install_dir], 'runscripts/init.ubuntu')
-  notifies :run, 'execute[sickrage rc.d]'
+  #notifies :run, 'execute[sickrage rc.d]'
 end
 
 template '/etc/default/sickrage' do
