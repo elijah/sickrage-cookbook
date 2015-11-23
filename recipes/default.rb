@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-service 'sickrage'
+service 'sickrage' do
+  restart_command '/etc/init.d/sickrage stop; /etc/init.d/sickrage start'
+end
 
 user node[:sickrage][:user] do
   system true
