@@ -53,34 +53,34 @@ git node[:sickrage][:install_dir] do
   notifies :restart, 'service[sickrage]'
 end
 
-template ::File.join(node[:sickrage][:config_dir], 'settings.conf') do
-  source 'settings.conf.erb'
-  owner node[:sickrage][:user]
-  group node[:sickrage][:group]
-  variables(
-    api_key: node[:sickrage][:settings][:api_key],
-    directory: node[:sickrage][:settings][:directory],
-    ignored_words: node[:sickrage][:settings][:ignored_words],
-    imdb_watchlist: node[:sickrage][:settings][:imdb_watchlist],
-    library: node[:sickrage][:settings][:library],
-    nzbs_api_key: node[:sickrage][:settings][:nzbs_api_key],
-    password: node[:sickrage][:settings][:password],
-    port: node[:sickrage][:settings][:port],
-    preferred_words: node[:sickrage][:settings][:preferred_words],
-    sabnzbd_api_key: node[:sickrage][:settings][:sabnzbd_api_key],
-    sabnzbd_url: node[:sickrage][:settings][:sabnzbd_url],
-    sabnzbd_ssl: node[:sickrage][:settings][:sabnzbd_ssl],
-    ssl_cert: node[:sickrage][:settings][:ssl_cert],
-    ssl_key: node[:sickrage][:settings][:ssl_key],
-    themoviedb_api_key: node[:sickrage][:settings][:themoviedb_api_key],
-    transmission_url: node[:sickrage][:settings][:transmission_url],
-    twitter_access_token_key: node[:sickrage][:settings][:twitter_access_token_key],
-    twitter_access_token_secret: node[:sickrage][:settings][:twitter_access_token_secret],
-    twitter_username: node[:sickrage][:settings][:twitter_username],
-    username: node[:sickrage][:settings][:username]
-  )
-  notifies :restart, 'service[sickrage]'
-end
+#template ::File.join(node[:sickrage][:config_dir], 'settings.conf') do
+#  source 'settings.conf.erb'
+#  owner node[:sickrage][:user]
+#  group node[:sickrage][:group]
+#  variables(
+#    api_key: node[:sickrage][:settings][:api_key],
+#    directory: node[:sickrage][:settings][:directory],
+#    ignored_words: node[:sickrage][:settings][:ignored_words],
+#    imdb_watchlist: node[:sickrage][:settings][:imdb_watchlist],
+#    library: node[:sickrage][:settings][:library],
+#    nzbs_api_key: node[:sickrage][:settings][:nzbs_api_key],
+#    password: node[:sickrage][:settings][:password],
+#    port: node[:sickrage][:settings][:port],
+#    preferred_words: node[:sickrage][:settings][:preferred_words],
+#    sabnzbd_api_key: node[:sickrage][:settings][:sabnzbd_api_key],
+#    sabnzbd_url: node[:sickrage][:settings][:sabnzbd_url],
+#    sabnzbd_ssl: node[:sickrage][:settings][:sabnzbd_ssl],
+#    ssl_cert: node[:sickrage][:settings][:ssl_cert],
+#    ssl_key: node[:sickrage][:settings][:ssl_key],
+#    themoviedb_api_key: node[:sickrage][:settings][:themoviedb_api_key],
+#    transmission_url: node[:sickrage][:settings][:transmission_url],
+#    twitter_access_token_key: node[:sickrage][:settings][:twitter_access_token_key],
+#    twitter_access_token_secret: node[:sickrage][:settings][:twitter_access_token_secret],
+#    twitter_username: node[:sickrage][:settings][:twitter_username],
+#    username: node[:sickrage][:settings][:username]
+#  )
+#  notifies :restart, 'service[sickrage]'
+#end
 
 link '/etc/init.d/sickrage' do
   to ::File.join(node[:sickrage][:install_dir], 'init/ubuntu')
