@@ -97,9 +97,9 @@ template '/etc/default/sickrage' do
   notifies :restart, 'service[sickrage]'
 end
 
-execute 'sickrage rc.d' do
-  command 'update-rc.d sickrage defaults'
-  not_if { 'update-rc.d -n sickrage defaults | grep "already existd"' }
-end
+#execute 'sickrage rc.d' do
+#  command 'update-rc.d sickrage defaults'
+#  not_if { 'update-rc.d -n sickrage defaults | grep "already existd"' }
+#end
 
-#
+
