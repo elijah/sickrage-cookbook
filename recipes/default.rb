@@ -79,7 +79,9 @@ template ::File.join(node[:sickrage][:config_dir], 'config.ini') do
     twitter_access_token_key: node[:sickrage][:settings][:twitter_access_token_key],
     twitter_access_token_secret: node[:sickrage][:settings][:twitter_access_token_secret],
     twitter_username: node[:sickrage][:settings][:twitter_username],
-    username: node[:sickrage][:settings][:username]
+    username: node[:sickrage][:settings][:username],
+    web_root: node[:sickrage][:settings][:web_root]
+
   )
   notifies :restart, 'service[sickrage]'
 end

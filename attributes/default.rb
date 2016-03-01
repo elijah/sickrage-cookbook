@@ -27,5 +27,6 @@ default[:sickrage][:settings] = {
   twitter_access_token_secret: nil,
   twitter_username: nil,
   username: 'username'
+  web_root: ''
 }
 
