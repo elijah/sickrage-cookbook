@@ -2,7 +2,7 @@ default[:sickrage][:user] = 'sickrage'
 default[:sickrage][:group] = 'sickrage'
 
 default[:sickrage][:install_dir] = '/opt/sickrage'
-default[:sickrage][:config_dir] = '/etc/sickrage'
+default[:sickrage][:config_dir] = '/opt/sickrage'
 
 default[:sickrage][:git_url] = 'https://github.com/sickrage/sickrage.git'
 default[:sickrage][:git_ref] = 'master'
