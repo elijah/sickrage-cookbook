@@ -35,7 +35,7 @@ apt_repository 'security-ubuntu-multiverse' do
   uri        'http://security.ubuntu.com/ubuntu'
   distribution 'trusty-security'
   components ['multiverse']
-  deb_src 'true'
+  deb_src true
 end
 
 %w{ unrar python-cheetah python-pip python-dev libssl-dev git }.each do |package|
